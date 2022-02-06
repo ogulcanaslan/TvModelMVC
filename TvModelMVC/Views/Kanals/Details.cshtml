@@ -1,0 +1,51 @@
+﻿@model TvModelMVC.Models.Kanal
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_MyLayoutPage1.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Kanal</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.KanalAdi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.KanalAdi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.KanalCiro)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.KanalCiro)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.KanalAdres)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.KanalAdres)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.KanalReyting)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.KanalReyting)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.KanalId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

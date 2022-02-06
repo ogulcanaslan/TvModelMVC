@@ -1,0 +1,51 @@
+﻿@model TvModelMVC.Models.Yayin
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_MyLayoutPage1.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Yayin</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.YayinAdi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.YayinAdi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.YayinTarihi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.YayinTarihi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.YayinReyting)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.YayinReyting)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Kanal.KanalAdi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Kanal.KanalAdi)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.YayinId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

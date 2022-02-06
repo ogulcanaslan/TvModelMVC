@@ -1,0 +1,52 @@
+﻿@model IEnumerable<TvModelMVC.Models.Kanal>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_MyLayoutPage1.cshtml";
+}
+
+<h2>Kanallar</h2>
+
+<p style="margin-left:20px">
+    @Html.ActionLink("Kanal Ekle", "Create", null, new { @class = "btn btn-outline-info" })
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.KanalAdi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.KanalCiro)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.KanalAdres)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.KanalReyting)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.KanalAdi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.KanalCiro)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.KanalAdres)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.KanalReyting)
+        </td>
+        <td>
+            @Html.ActionLink("Düzenle", "Edit", new { id=item.KanalId }, new {@class= "btn btn-outline-success" }) |
+            @Html.ActionLink("Detay", "Details", new { id=item.KanalId }, new { @class = "btn btn-outline-primary" }) |
+            @Html.ActionLink("Sil", "Delete", new { id=item.KanalId }, new { @class = "btn btn-outline-danger" })
+        </td>
+    </tr>
+}
+
+</table>

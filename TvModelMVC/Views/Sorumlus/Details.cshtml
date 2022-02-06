@@ -1,0 +1,51 @@
+﻿@model TvModelMVC.Models.Sorumlu
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_MyLayoutPage1.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Sorumlu</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.SorumluIsim)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SorumluIsim)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SorumluGorevi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SorumluGorevi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SorumluMaas)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SorumluMaas)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Yayin.YayinAdi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Yayin.YayinAdi)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.SorumluId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

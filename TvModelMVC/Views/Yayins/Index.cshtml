@@ -1,0 +1,52 @@
+﻿@model IEnumerable<TvModelMVC.Models.Yayin>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_MyLayoutPage1.cshtml";
+}
+
+<h2>Yayınlar</h2>
+
+<p style="margin-left:20px">
+    @Html.ActionLink("Yayın Ekle", "Create", null, new { @class = "btn btn-outline-info" })
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.YayinAdi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.YayinTarihi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.YayinReyting)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Kanal.KanalAdi)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.YayinAdi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.YayinTarihi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.YayinReyting)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Kanal.KanalAdi)
+        </td>
+        <td>
+            @Html.ActionLink("Düzenle", "Edit", new { id=item.YayinId }, new { @class = "btn btn-outline-success" }) |
+            @Html.ActionLink("Detay", "Details", new { id=item.YayinId }, new { @class = "btn btn-outline-primary" }) |
+            @Html.ActionLink("Sil", "Delete", new { id=item.YayinId }, new { @class = "btn btn-outline-danger" })
+        </td>
+    </tr>
+}
+
+</table>

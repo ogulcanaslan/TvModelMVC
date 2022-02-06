@@ -1,0 +1,51 @@
+﻿@model IEnumerable<TvModelMVC.Models.Sorumlu>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_MyLayoutPage1.cshtml";
+}
+<h2><center>Sorumlular</center></h2>
+
+<p style="margin-left:20px">
+    @Html.ActionLink("Sorumlu Ekle", "Create",null , new {@class = "btn btn-outline-info" })
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.SorumluIsim)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SorumluGorevi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SorumluMaas)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Yayin.YayinAdi)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.SorumluIsim)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SorumluGorevi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SorumluMaas)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Yayin.YayinAdi)
+        </td>
+        <td>
+            @Html.ActionLink("Düzenle", "Edit", new { id=item.SorumluId }, new { @class = "btn btn-outline-success" }) |
+            @Html.ActionLink("Detay", "Details", new { id=item.SorumluId }, new { @class = "btn btn-outline-primary" }) |
+            @Html.ActionLink("Sil", "Delete", new { id=item.SorumluId }, new { @class = "btn btn-outline-danger" })
+        </td>
+    </tr>
+}
+
+</table>
